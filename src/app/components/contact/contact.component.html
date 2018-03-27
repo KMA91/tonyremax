@@ -1,0 +1,51 @@
+<div class="jumbo" [@fadeInAnimation]>
+  <div class="center">
+    <div class="caption">
+      <h1>Contact</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container" [@fadeInAnimation]>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-3 tonyContainer">
+      <div class="tonyBox">
+        <img src="https://s3-us-west-1.amazonaws.com/mean-realestate/tonybackground.png" class="img-responsive">
+      </div>
+        <p>842 E Valley Blvd.</p>
+        <p>Alhambra, CA 91801</p>
+        <a href="tel:+6267594812">(626)759-4812</a>
+        <a href="mailto:BrokerTonyMa@gmail.com" target="_top">brokertonyma@gmail.com</a>
+        <button routerLink="/contact" class='btn btn-md'>Contact Now</button>
+        <button routerLink="/about" class='btn btn-md'>See Testimonials</button>
+    </div>
+
+    <div class="col-xs-12 col-md-9 contactForm">
+      <div class="contactWrapper">
+
+        <div *ngIf="message" class="col-xs-12 sentMessage" [@fadeInAnimation]>
+          <h3>{{ message }}</h3>
+        </div>
+
+        <div class="message" class="col-xs-12 sentMessage" [@fadeInAnimation]>
+          <h3> {{ errors }} </h3>
+        </div>
+
+        <form (submit)="sendEmail(formData)" #formData="ngForm">
+          <p>Name</p>
+          <input type="text" name="name" ngModel>
+          <p>Contact Number</p>
+          <input type="text" name="phone" ngModel>
+          <p>Email Address</p>
+          <input type="text" name="email" ngModel>
+          <p>Message</p>
+          <textarea name="message" class="message" ngModel></textarea>
+          <button class="btn btn-md">Send</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>

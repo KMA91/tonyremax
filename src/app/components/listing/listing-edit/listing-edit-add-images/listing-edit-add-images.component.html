@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="uploadfile">
+    <h3>Select files</h3>
+      <div class="dropzonearea">
+        <div ng2FileDrop
+        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+        (fileOver)="fileOverBase($event)"
+        [uploader]="uploader"
+        class="dropzone">
+        > Drop Images Here <
+      </div>
+      <input type="file" ng2FileSelect [uploader]="uploader" multiple/>
+      <button type="button" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Upload all</button>
+    </div>
+    <div *ngIf='showButton && this.files.length' class="addit">
+      <button (click)='addMoreImages()'>Add</button>
+    </div>
+    <div *ngIf='!showButton || !this.files.length' class="dontadd">
+      <button disabled='disabled'>Add</button>
+    </div>
+  <button (click)='toggleShow()'>Cancel</button>
+</div>

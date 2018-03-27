@@ -1,0 +1,537 @@
+$font-stack: "Oswald", sans-serif;
+$font-secondary: Fjalla One, sans-serif;
+$primary-color: #080a58;
+$secondary-color: #f28109;
+$blue-button: #068aff;
+$button-orange: orange;
+
+* {
+  font-family: $font-stack;
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding: 100px 25px;
+}
+
+.btn {
+  width: 200px;
+  height: 50px;
+  padding: 5px;
+  color: white;
+  background: orange;
+  text-transform: uppercase;
+  transition: filter 1s;
+}
+
+.btn:nth-child(even){
+  background: $blue-button;
+  margin-left: 4px;
+}
+
+.btn:hover {
+  -webkit-transition: box-shadow background 1s;
+  transition: filter 1s;
+  filter: brightness(0.8);
+}
+
+.slideContainer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// /* 1) SLIDESHOW // 1) SLIDESHOW //  */
+// /* 1) SLIDESHOW // 1) SLIDESHOW //  */
+
+@keyframes fade {
+  0%   {opacity:1}
+  33.333% { opacity: 0}
+  66.666% { opacity: 0}
+  100% { opacity: 1}
+}
+@keyframes fade2 {
+  0%   {opacity:0}
+  33.333% { opacity: 1}
+  66.666% { opacity: 0 }
+  100% { opacity: 0}
+}
+@keyframes fade3 {
+  0%   {opacity:0}
+  33.333% { opacity: 0}
+  66.666% { opacity: 1}
+  100% { opacity: 0}
+}
+
+.slide1, .slide2, .slide3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 5px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .slider {
+    max-width: 100%;
+    height: 600px;
+    position: relative;
+  }
+
+  .slide1, .slide2, .slide3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slide1 {
+    background: url(https://s3-us-west-1.amazonaws.com/mean-realestate/pexels-photo-286744.jpeg)no-repeat center;
+    background-size: cover;
+    animation:fade 16s infinite;
+    -webkit-animation:fade 12s infinite;
+    h3 {
+      color: transparent;
+    }
+  }
+
+  .slide2 {
+    background: url(https://s3-us-west-1.amazonaws.com/mean-realestate/pexels-photo-279607.jpeg)no-repeat center;
+    background-size: cover;
+    animation:fade2 16s infinite;
+    -webkit-animation:fade2 12s infinite;
+  }
+
+  .slide3 {
+    background: url(https://s3-us-west-1.amazonaws.com/mean-realestate/pexels-photo-186077.jpeg)no-repeat center;
+    background-position: 25% 25%;
+    background-size: cover;
+    animation:fade3 16s infinite;
+    -webkit-animation:fade3 12s infinite;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .slider {
+    max-width: 100%;
+    height: 450px;
+    position: relative;
+  }
+  .slide1 {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://s3-us-west-1.amazonaws.com/mean-realestate/mobilejumbo.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    h3 {
+      font-size: 1.75em;
+      color: white;
+      position: relative;
+      top: 40%;
+      line-height: 1.1;
+    }
+  }
+}
+
+/* WELCOME */ /* WELCOME */ /* WELCOME */
+/* WELCOME */ /* WELCOME */ /* WELCOME */
+/* WELCOME */ /* WELCOME */ /* WELCOME */
+
+
+.tonybox {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto;
+  opacity: 0.9;
+  filter: brightness(1.1);
+}
+
+.welcomeMessage {
+  margin-top: 10px;
+  &h1, &p {
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  h4, h1 {
+    text-transform: uppercase;
+    margin: 0;
+  }
+  h4 {
+    letter-spacing: 2px;
+    color: #f28109;
+  }
+  h1 {
+    color: #080a58;
+    margin-bottom: 5px;
+  }
+  p {
+    color: grey;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    font-family: 'Fjalla One', sans-serif;
+  }
+}
+
+.img-responsive {
+  width: 70%;
+}
+
+@media only screen and (max-width: 414px) {
+
+  .landingContainer {
+    padding: 50px;
+  }
+
+  .img-responsive {
+    width: 70%;
+  }
+
+  .img-responsive, .welcomeMessage {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .welcomeMessage h4 {
+    font-size: 1.5em;
+  }
+
+  button {
+    margin-bottom: 5px;
+  }
+
+
+}
+
+/* 2) VALUES / 2) VALUES / 2) VALUES /  */
+/* 2) VALUES / 2) VALUES / 2) VALUES /  */
+
+.valuesContainer {
+  background-image:url('https://s3-us-west-1.amazonaws.com/mean-realestate/cityblue.jpg');
+}
+
+.valuesHeader {
+  text-align: center;
+  background: white;
+  padding: 1px 0;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  h3 {
+    display: inline-block;
+    font-weight: 600;
+    color: $primary-color;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+}
+
+.contentContainer {
+  padding: 5px;
+  border-radius: 7px;
+  background: white;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 7px 7px #6d6e98;
+  text-transform: uppercase;
+  -webkit-transition: box-shadow 1s;
+  &:hover {
+    -webkit-transition: box-shadow 1s;
+    box-shadow: 15px 15px #6d6e98;
+  }
+  &:hover p {
+    color: orange;
+    -webkit-transition: color 1s;
+  }
+  h4 {
+    color: $primary-color;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  p {
+    font-size: 1.25em;
+    color: grey;
+    letter-spacing: 2px;
+    -webkit-transition: color 1s;
+  }
+  &:first-of-type:hover .fa-book {
+    animation:bookShake 5s ease infinite;
+  }
+  &:nth-of-type(odd):hover .fa-comments {
+    animation:commentBeat 5s ease infinite;
+  }
+  &:last-of-type:hover .fa-handshake {
+    position: relative;
+    display: inline-block;
+    -moz-animation: handshake 1s infinite linear;
+    -o-animation: handshake 1s infinite linear;
+    -webkit-animation: handshake 1s infinite linear;
+    animation: handshake 1s infinite linear;
+  }
+}
+
+.fa-book, .fa-comments, .fa-handshake {
+  color: $secondary-color;
+}
+
+@media only screen and (max-width: 414px) {
+  .contentContainer {
+    border-radius: 0;
+  }
+  .firstContainer {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .lastContainer {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .contentContainer {
+    min-height: 230px;
+  }
+}
+
+@keyframes commentBeat {
+  0% {
+    transform:scale(1);
+  }
+  5% {
+    transform:scale(1.25);
+  }
+  20% {
+    transform:scale(1);
+  }
+  30% {
+    transform:scale(1);
+  }
+  35% {
+    transform:scale(1.25);
+  }
+  50% {
+    transform:scale(1);
+  }
+  55% {
+    transform:scale(1.25);
+  }
+  70% {
+    transform:scale(1);
+  }
+}
+
+@-webkit-keyframes bookShake {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes bookShake {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes handshake {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes handshake {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes handshake {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}

@@ -1,0 +1,163 @@
+$font-stack: Oswald, sans-serif;
+$primary-color: #080a58;
+$secondary-color: #f28109;
+
+* {
+  font-family: $font-stack;
+  color: $primary-color;
+}
+
+.jumbo {
+  background-image:url(https://s3-us-west-1.amazonaws.com/mean-realestate/jumboimage.jpg);
+  background-position: top;
+  text-align: center;
+  .center {
+    padding: 65px 0;
+  }
+  .caption {
+    padding: 10px;
+    display: inline-block;
+    background: white;
+    h1 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .jumbo {
+    .center {
+      padding: 40px 0;
+    }
+  }
+}
+
+.container {
+  padding: 15px;
+}
+
+.tonyContainer {
+  text-align: center;
+  border: 2px solid #e6e4ff;
+  border-radius: 10px;
+  box-shadow: 2px 2px #e6e4ff;
+  padding: 47px 10px !important;
+  a {
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+  button {
+    display: block;
+    margin: 3px auto;
+    height: 50px;
+    width: 200px;
+    transition: filter 1s;
+  }
+  button:hover {
+    filter: brightness(0.9);
+    transition: filter 1s;
+  }
+  .btn {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: $secondary-color;
+    color: white;
+  }
+  .btn:nth-child(odd){
+    background: #068aff;
+  }
+  .tonyBox {
+    background: white;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      opacity: 0.9;
+      margin: 0 auto;
+      border-radius: 10px;
+      filter: brightness(0.9);
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.contactForm {
+  .contactWrapper {
+    padding: 15px;
+    border: 2px solid #e6e4ff;
+    border-radius: 10px;
+    box-shadow: 2px 2px #e6e4ff;
+    form {
+      font-size: 16px;
+      letter-spacing: 2px;
+      textarea:focus, input:focus{
+        outline: none;
+      }
+      .message {
+        margin-bottom: 10px;
+        height: 250px;
+        width: 500px;
+        resize: none;
+        display: block;
+        letter-spacing: 2px;
+        border: 2px solid #d2d2d2;
+      }
+      button {
+        background: $secondary-color;
+        color: white;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        height: 50px;
+        width: 200px;
+      }
+      input, textarea {
+        padding: 3px;
+        border-radius: 4px;
+        border: 2px solid #d2d2d2;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  .sentMessage{
+    h3 {
+      display: inline-block;
+      padding: 5px;
+      color: $primary-color;
+      background: yellow;
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  * {
+    text-align: center;
+  }
+  .tonyContainer {
+    padding: 100px 0 !important;
+    border: none;
+    box-shadow: none;
+    img {
+      width: 50%;
+    }
+    a {
+      display: block;
+    }
+  }
+  .contactForm {
+    .contactWrapper {
+      form {
+        font-size: 20px;
+        .message {
+          height: 250px;
+          width: 309px;
+        }
+      }
+    }
+  }
+}

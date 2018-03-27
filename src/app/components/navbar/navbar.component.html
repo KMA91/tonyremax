@@ -1,0 +1,22 @@
+<div class="container">
+
+  <!-- <a routerLink="/" class="logo" (click)="close()"><img src="https://s3-us-west-1.amazonaws.com/mean-realestate/tmhouse.png"></a> -->
+  <div class="brand">
+    <a routerLink="/">
+      <h1>Tony Ma</h1>
+      <p>Real Estate</p>
+    </a>
+  </div>
+
+  <div class="links" id="Nav">
+    <a href="javascript:void(0);" class="icon" id="icon" (click)="changeResponsive()">&#9776;</a>
+
+      <div class="links-cont" (click)="closeMenu()">
+        <a routerLink="/properties">Properties</a>
+        <a routerLink="/about">About</a>
+        <a routerLink="/contact">Contact</a>
+      </div>
+
+  </div>
+
+</div>

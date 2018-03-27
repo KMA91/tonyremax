@@ -1,0 +1,84 @@
+<div class="jumbo" [@fadeInAnimation]>
+  <div class="center">
+    <div class="caption">
+      <h1>Properties</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container" [@fadeInAnimation]>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-3 tonyContainer">
+      <div class="tonyBox">
+        <img src="https://s3-us-west-1.amazonaws.com/mean-realestate/tonybackground.png" class="img-responsive">
+      </div>
+        <p>842 E Valley Blvd.</p>
+        <p>Alhambra, CA 91801</p>
+        <a href="tel:+6267594812">(626)759-4812</a>
+        <a href="mailto:BrokerTonyMa@gmail.com" target="_top">brokertonyma@gmail.com</a>
+        <button routerLink="/contact" class='btn btn-md'>Contact Now</button>
+        <button routerLink="/about" class='btn btn-md'>See Testimonials</button>
+        <agm-map
+          [latitude]="latitude"
+          [longitude]="longitude"
+          [zoom]="zoom">
+          <agm-marker
+              [latitude]="latitude"
+              [longitude]="longitude">
+            <agm-info-window>
+              <strong>InfoWindow content</strong>
+            </agm-info-window>
+
+          </agm-marker>
+        </agm-map>
+    </div>
+
+      <div class="col-xs-12 col-md-9 listingContainer">
+        <div class="listingWrapper">
+
+          <div class="arrowContainer">
+            <h1>Browse Properties</h1>
+              <div class="break"></div>
+          </div>
+
+          <div class="row">
+
+            <div *ngFor="let listing of listings" class="listings">
+              <div class="col-xs-12" (mouseenter)="getLatLan( listing.address )">
+
+                <div class="row">
+
+                  <div class="image-container col-xs-6">
+
+                    <a routerLink="/show/{{ listing._id }}" class="image"><img src="{{ listing.paths[0] }}" class="img-responsive listingimg"></a>
+                    <div class="middle">
+                      <button routerLink="/show/{{ listing._id }}"  class="btn btn-md desktopBrowse">More Images</button>
+                    </div>
+
+                  </div>
+
+                  <div class="col-xs-6 address">
+                    <p>{{ listing.address }}</p>
+                    <button routerLink="/show/{{ listing._id }}"  class="btn btn-md mobileBrowse">Browse Images</button>
+                  </div>
+
+                </div>
+                <div class="break"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arrowContainer">
+              <button (click)="leftClick()" class="btn btn-md" id="leftArrow"><</button>
+              <button (click)="rightClick()" class="btn btn-md" id="rightArrow">></button>
+          </div>
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+<!-- <div class="prefooter">
+</div> -->

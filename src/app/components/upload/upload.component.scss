@@ -1,0 +1,34 @@
+.wrapper{
+  padding: 2%;
+  text-align: center;
+}
+
+/*.buttons{
+  margin: 0 auto;
+  text-align: center;
+}*/
+
+.dontadd, .addit{
+  display: inline-block;
+}
+
+.info{
+  outline: 2px solid red;
+  padding: 3%;
+}
+
+.dropzone{
+  outline: 2px dotted red;
+  padding: 10% 0;
+}
+
+.uploadfile, .showqueue, .uploadedalready, .showqueue, .info, .dropzonearea{
+  outline: 2px solid red;
+  width: 50%;
+  padding: 3%;
+  margin: 2% auto;
+}
+
+.addit, .dontadd{
+  padding: 3%;
+}

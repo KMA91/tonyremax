@@ -1,0 +1,30 @@
+<div class="wrapper" *ngIf="!showAdd">
+  <div *ngIf='listings' class='listings'>
+    <h3 *ngIf='listings.length == 0'>Add Listings to get started</h3>
+    <table *ngIf='listings.length > 0'>
+      <tr>
+        <th>Address</th>
+        <th>Sold</th>
+        <th>Images</th>
+        <th>Add Image</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor='let listing of listings'>
+        <td (click)="showAddressForm()" *ngIf='!showAddress'>{{ listing.address }}</td>
+        <td *ngIf='showAddress'>
+          <form (submit)='changeAddress(formData, listing._id)' #formData="ngForm">
+            <textarea name="address" rows="3" cols="20" value='listing.address' ngModel>asdfg</textarea>
+            <button>Apply</button>
+          </form>
+          <button (click)='showAddressForm()'>Cancel</button>
+        </td>
+        <td (click)="changeSoldStatus(listing._id)"><button>{{ listing.sold }}</button></td>
+        <td *ngFor='let path of listing.paths'><a (click)="deleteImage(listing._id, path)"><img src="{{ path }}"></a></td>
+        <td><button (click)='toggleShow(listing._id)'>Add Image</button></td>
+        <td><button (click)="deleteListing(listing._id)">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<app-listing-edit-add-images *ngIf="showAdd" (showAdd)='toggleShow($event)' [showAddID]='showAddID'></app-listing-edit-add-images>
